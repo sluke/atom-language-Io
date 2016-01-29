@@ -1,6 +1,6 @@
 {
   "name": "atom-language-Io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Add syntax highlighting and snippets to Io files in Atom",
   "repository": "https://github.com/sluke/atom-language-io",
   "license": "MIT",
