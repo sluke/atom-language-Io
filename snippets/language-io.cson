@@ -1,0 +1,52 @@
+".source.io":
+  "Indented Bracketed Line":
+    prefix: "("
+    body: '''
+      (${1:header,}
+      	${2:body}
+      )$0
+    '''
+  method:
+    prefix: "m"
+    body: '''
+      ${1:methodName} := method(${2:args,}
+      	$0
+      )
+    '''
+  "Object clone do":
+    prefix: "ocdo"
+    body: '''
+      ${1:name} := Object clone do(
+      	$0
+      )
+    '''
+  UnitTest:
+    prefix: "ut"
+    body: '''
+      ${1:Something}Test := ${2:UnitTest} clone do(
+      	$0
+      )
+    '''
+  assertEquals:
+    prefix: "ae"
+    body: "assertEquals(${1:expected}, ${2:expr})"
+  "clone do":
+    prefix: "cdo"
+    body: '''
+      ${1:${2:newValue} := ${3:Object} }clone do(
+      	$0
+      )
+    '''
+  docSlot:
+    prefix: "ds"
+    body: "docSlot(\"${1:slotName}\", \"${2:documentation}\")"
+  newSlot:
+    prefix: "ns"
+    body: "newSlot(\"${1:slotName}\", ${2:defaultValue}, \"${3:docString}\")$0"
+  testMethod:
+    prefix: "ts"
+    body: '''
+      test${1:SomeFeature} := method(
+      	$0
+      )
+    '''
