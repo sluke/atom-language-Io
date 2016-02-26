@@ -6,7 +6,7 @@
       	${2:body}
       )$0
     '''
-  method:
+  "method":
     prefix: "m"
     body: '''
       ${1:methodName} := method(${2:args,}
@@ -20,14 +20,14 @@
       	$0
       )
     '''
-  UnitTest:
+  "UnitTest":
     prefix: "ut"
     body: '''
       ${1:Something}Test := ${2:UnitTest} clone do(
       	$0
       )
     '''
-  assertEquals:
+  "assertEquals":
     prefix: "ae"
     body: "assertEquals(${1:expected}, ${2:expr})"
   "clone do":
@@ -37,16 +37,50 @@
       	$0
       )
     '''
-  docSlot:
+  "docSlot":
     prefix: "ds"
     body: "docSlot(\"${1:slotName}\", \"${2:documentation}\")"
-  newSlot:
+  "newSlot":
     prefix: "ns"
     body: "newSlot(\"${1:slotName}\", ${2:defaultValue}, \"${3:docString}\")$0"
-  testMethod:
+  "testMethod":
     prefix: "ts"
     body: '''
       test${1:SomeFeature} := method(
       	$0
       )
+    '''
+  "if conditional":
+    prefix: "if"
+    body: '''
+      if (${1:condition},
+      	${2:doMessage},
+      	${3:elseDoMessage}
+      )
+    '''
+  "repeat loop":
+    prefix: "repeat"
+    body: '''
+      ${1:repeatNumber} repeat(${2:doMessage})
+      )
+    '''
+  "while loop":
+    prefix: "while"
+    body: '''
+      while (${1:condition},
+      	${2:doMessage}
+      )
+    '''
+  "for loop":
+    prefix: "for"
+    body: '''
+      for (${1:counter}, ${2:start}, ${3:end}, ${4:optinalStep}
+      	${5:doMessage
+      )
+    '''
+  "Create an list":
+    prefix: "lc"
+    body: '''
+      ${1:listName} := List clone
+      $0
     '''
